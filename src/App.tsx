@@ -2,6 +2,8 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {increment, decrement} from './Redux/Actions/actions'
 import { ButtonGroup, Button } from '@mui/material';
+import { Header } from './Layouts/Header';
+import Footer from './Layouts/Footer';
 
 function App() {
   // state managed by redux
@@ -9,7 +11,8 @@ function App() {
   const isLogged = useSelector((state: any) => state.isLogged);
   const dispatch = useDispatch();
   return (
-    <div className="App">
+    <div>
+      <Header />
       <header className="App-header">
         <h2>codeverse</h2>
           <ButtonGroup variant="outlined" aria-label="outlined button group">
@@ -19,6 +22,7 @@ function App() {
           </ButtonGroup>
         { isLogged ? <p>welcome user</p> : ""}
       </header>
+      <Footer />
     </div>
   );
 }
